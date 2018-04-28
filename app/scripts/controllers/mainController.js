@@ -170,28 +170,9 @@ angular.module('ethExplorer')
 
 
         function getHashrate()	{
-          $.getJSON("https://etherchain.org/api/miningEstimator", function(json) {
-            var hr = json.data[0].hashRate;
-            $scope.hashrate = hr;
-       	});
       }
 
         function getETHRates() {
-          $.getJSON("https://api.coinmarketcap.com/v1/ticker/ethereum/", function(json) {
-            var price = Number(json[0].price_usd);
-            $scope.ethprice = "$" + price.toFixed(2);
-          });
-
-          $.getJSON("https://api.coinmarketcap.com/v1/ticker/ethereum/", function(json) {
-            var btcprice = Number(json[0].price_btc);
-            $scope.ethbtcprice = btcprice;
-          });
-
-          $.getJSON("https://api.coinmarketcap.com/v1/ticker/ethereum/", function(json) {
-            var cap = Number(json[0].market_cap_usd);
-            //console.log("Current ETH Market Cap: " + cap);
-            $scope.ethmarketcap = cap;
-          });
         }
 
         function updateTXList() {
@@ -270,7 +251,7 @@ angular.module('filters', []).
       if (isNaN(txt)) return txt;
       var b = new BigNumber(txt);
       var w = web3.fromWei(b, "ether");
-      return w.toFixed(6) + " ETH";
+      return w.toFixed(6) + " AQUA";
     };
   }).
   filter('sizeFormat', function () {

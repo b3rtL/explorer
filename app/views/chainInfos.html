@@ -1,7 +1,7 @@
 <div class="container" style="padding-top: 10px;">
 
-    <h1><i class="fa fa-server"></i> Ethereum Information
-        <small>View information about the Ethereum Blockchain</small>
+    <h1><i class="fa fa-server"></i> Aquachain Information
+        <small>View information about the Aquachain Blockchain</small>
     </h1>
     <div id="chain" class="blockdiv">
         <table class="table table-striped">
@@ -10,7 +10,8 @@
             </tr>
             <tr>
                 <td>Current Block</td>
-                <td><a href="./#/block/{{ blockNum }}">{{ blockNum }}</a></td>
+                <td><a href="./#/block/{{ blockNum }}">{{ blockNum }}</a><br>
+                {{ blockNum }} AQUA in circulation (1 per block, plus uncle blocks)</a></td>
             </tr>
             <tr>
                 <td>Block Time</td>
@@ -43,12 +44,15 @@
                 <td>Gas Limit</td>
                 <td>{{ gasLimit }}</td>
             </tr>
+	    <tr>
+		<td>Suggested GasPrice</td>
+		<td>0.1 gwei</td>
             <tr>
                 <td>Time</td>
                 <td>{{ time }}</td>
             </tr>
             <tr>
-                <td>Connected to ETH Network</td>
+                <td>Connected to AQUACHAIN Network</td>
                 <td>{{ isConnected }}</td>
             </tr>
             <tr>

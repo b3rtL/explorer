@@ -40,7 +40,7 @@ angular.module('ethExplorer')
                     $scope.gasUsed = result.gasUsed;
                     $scope.nonce = result.nonce;
                     var diff = ("" + result.difficulty).replace(/['"]+/g, '') / 1000000000000;
-                    $scope.difficulty = diff.toFixed(3) + " T";
+                    $scope.difficulty = result.difficulty;
                     $scope.gasLimit = new BigNumber(result.gasLimit).toFormat(0) + " m/s"; // that's a string
                     $scope.gasUsed = new BigNumber(result.gasUsed).toFormat(0) + " m/s";
                     $scope.nonce = result.nonce;

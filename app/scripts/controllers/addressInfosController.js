@@ -38,7 +38,6 @@ angular.module('ethExplorer')
                 	console.log(result)
                 	$scope.transactions=result;
                 	});
-              getETHUSD();
             } else {
                 $location.path("/");
             }
@@ -52,15 +51,43 @@ angular.module('ethExplorer')
                 return deferred.promise;
             }
 
-            function getETHUSD() {
-              $.getJSON("https://api.coinmarketcap.com/v1/ticker/ethereum/", function(json) {
-                var price = Number(json[0].price_usd);
-                var ethusd = price.toFixed(2);
-                var balanceusd = "$" + ethusd * $scope.balance;
-                $scope.balanceusd = balanceusd;
-                //console.log("Balance in USD " + $scope.balanceusd);
-              });
-            }
+function getTransactionsByAccount(myaccount, startBlockNumber, endBlockNumber) {
+  if (endBlockNumber == null) {
+    endBlockNumber = eth.blockNumber;
+    console.log("Using endBlockNumber: " + endBlockNumber);
+  }
+  if (startBlockNumber == null) {
+    startBlockNumber = endBlockNumber - 1000;
+    console.log("Using startBlockNumber: " + startBlockNumber);
+  }
+  console.log("Searching for transactions to/from account \"" + myaccount + "\" within blocks "  + startBlockNumber + " and " + endBlockNumber);
+
+  for (var i = startBlockNumber; i <= endBlockNumber; i++) {
+    if (i % 1000 == 0) {
+      console.log("Searching block " + i);
+    }
+    var block = eth.getBlock(i, true);
+    if (block != null && block.transactions != null) {
+      block.transactions.forEach( function(e) {
+        if (myaccount == "*" || myaccount == e.from || myaccount == e.to) {
+         var str = "  tx hash          : " + e.hash + "\n"
+            + "   nonce           : " + e.nonce + "\n"
+            + "   blockHash       : " + e.blockHash + "\n"
+            + "   blockNumber     : " + e.blockNumber + "\n"
+            + "   transactionIndex: " + e.transactionIndex + "\n"
+            + "   from            : " + e.from + "\n" 
+            + "   to              : " + e.to + "\n"
+            + "   value           : " + e.value + "\n"
+            + "   time            : " + block.timestamp + " " + new Date(block.timestamp * 1000).toGMTString() + "\n"
+            + "   gasPrice        : " + e.gasPrice + "\n"
+            + "   gas             : " + e.gas + "\n"
+            + "   input           : " + e.input;
+		return str
+        }
+      })
+    }
+  }
+}
 
             function getAddressTransactionCount(){
             	// var success=$.getScript('../../config.js');
@@ -96,7 +123,7 @@ angular.module('ethExplorer')
                 // var options = 'pending'
                 // console.log(options);
 
-                var options = {fromBlock: 0, toBlock: 'latest', address: "0xf2cc0eeaaaed313542cb262b0b8c3972425143f0"};
+                var options = {fromBlock: 0, toBlock: 'latest', address: $scope.addressId};
 
                 var myfilter = web3.eth.filter(options);
 
@@ -122,7 +149,7 @@ angular.module('ethExplorer')
                 			});
 
                 */
-                return deferred.promise;
+		return deferred.promise;
 
             }
         };
