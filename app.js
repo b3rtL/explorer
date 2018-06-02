@@ -96,7 +96,7 @@ angular.module('ethExplorer', ['ngRoute','ui.bootstrap','filters','ngSanitize'])
         var web3 = require('web3');
 
         // begin AltSheets changes
-        web3.setProvider(new web3.providers.HttpProvider("http://"+GETH_HOSTNAME+":"+GETH_RPCPORT));
+        web3.setProvider(new web3.providers.HttpProvider("https://"+GETH_HOSTNAME+":"+GETH_RPCPORT));
         // end AltSheets changes
 
         $rootScope.web3=web3;
