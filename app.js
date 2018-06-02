@@ -1,7 +1,3 @@
-// begin AltSheets changes
-///////////////////////////////
-// TODO: Put go into a config.js
-// But how to include a file from local?
 
 var GETH_HOSTNAME	= "c.onical.org";	// sometimes working
 //var GETH_HOSTNAME = "127.0.0.1"; // for local

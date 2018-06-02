@@ -45,11 +45,11 @@
         <tbody>
             <tr ng-repeat="block in blocks" class="animated fadeIn">
                 <td>
-                    <a href="/#/block/{{ block.number }}">
+                    <a href="/explorer/#/block/{{ block.number }}">
                         <span class="btn btn-sm btn-primary"><i class="fa fa-cube"></i> {{ block.number }}</span>
                     </a>
                 </td>
-                <td><a href="/#/block/{{ block.hash }}"><span class="btn btn-sm btn-success">{{ block.hash | truncate : 12 }}</span></a></td>
+                <td><a href="/explorer/#/block/{{ block.hash }}"><span class="btn btn-sm btn-success">{{ block.hash | truncate : 12 }}</span></a></td>
                 <td style="vertical-align:middle;">{{ block.difficulty }}</td>
                 <td style="vertical-align:middle;"><a href="/#/address/{{ block.miner }}">{{ block.miner }}</a></td>
                 <td style="vertical-align:middle;">
@@ -89,14 +89,14 @@
         <tbody>
             <tr ng-repeat="tx in recenttransactions track by $index-async" class="animated fadeIn">
 
-              <td style="vertical-align:middle;"><a href="/#/tx/{{ tx.hash }}">{{ tx.hash || "" | truncate : 45 }}</a></td>
+              <td style="vertical-align:middle;"><a href="/explorer/#/tx/{{ tx.hash }}">{{ tx.hash || "" | truncate : 45 }}</a></td>
                 <td style="vertical-align:middle;">
-                    <a href="/#/block/{{ tx.blockNumber }}">
+                    <a href="/explorer/#/block/{{ tx.blockNumber }}">
                         {{ tx.blockNumber || "" }}
                     </a>
                 </td>
-                <td style="vertical-align:middle;"><a href="/#/address/{{ tx.from }}">{{ tx.from || "" | truncate : 20 }}</a></td>
-                <td style="vertical-align:middle;"><a href="/#/address/{{ tx.to }}">{{ tx.to || "" | truncate : 20 }}</a></td>
+                <td style="vertical-align:middle;"><a href="/explorer/#/address/{{ tx.from }}">{{ tx.from || "" | truncate : 20 }}</a></td>
+                <td style="vertical-align:middle;"><a href="/explorer/#/address/{{ tx.to }}">{{ tx.to || "" | truncate : 20 }}</a></td>
                 <td style="vertical-align:middle;">
                     {{ tx.gas | gasFormat }}
                 </td>
