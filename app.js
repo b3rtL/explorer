@@ -3,12 +3,12 @@
 // TODO: Put go into a config.js
 // But how to include a file from local?
 
-var GETH_HOSTNAME	= "explorer.aquanetwork.co";	// sometimes working
+var GETH_HOSTNAME	= "c.onical.org";	// sometimes working
 //var GETH_HOSTNAME = "127.0.0.1"; // for local
-var APP_HOSTNAME 	= "explorer.aquanetwork.co";
+var APP_HOSTNAME 	= "aquachain.github.io";
 
-var GETH_RPCPORT  	= 8543; 		// for geth --rpcport GETH_RPCPORT
-var APP_PORT 		= 8081;
+var GETH_RPCPORT  	= 443; 		// for geth --rpcport GETH_RPCPORT
+var APP_PORT 		= 443;
 
 // this is creating the corrected geth command
 var WL=window.location;
