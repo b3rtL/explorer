@@ -25,25 +25,26 @@
             <span class="sr-only">Toggle navigation</span>
             <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand" href="./#/">AQUACHAIN EXPLORER</a>
+        <img src='https://aquachain.github.io/img/a100.png' alt='AQUACHAIN EXPLORER'>
+        <!-- <a class="navbar-brand" href="./#/">AQUACHAIN EXPLORER</a> -->
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li><a href="./#/">Home</a></li>
             <li><a href="./#/chain">Blockchain Info</a></li>
             <li><a style="font-weight: bolder;" href="https://github.com/aquanetwork/aquachain/releases/latest">Stay Updated</a></li>
-            <li><a href="http://aquachain-1.aquanetwork.co/">Mining pool</a></li>
+            <li><a href="https://pool.aquachain-foundation.org/">Mining pool</a></li>
             <li><a href="https://aquachain.github.io/">Website</a></li>
             <li><a href="https://github.com/aquanetwork/aquachain/wiki/Basics">Wiki</a></li>
             <li><a href="https://github.com/aquanetwork/aquachain">Source Code</a></li>
             <li><a href="https://t.me/AquaCrypto">Chat</a></li>
         </ul>
-        <div class="col-sm-3 col-md-3 pull-right">
-            <form class="navbar-form"  ng-controller="mainCtrl" ng-submit="processRequest()" name="search_form" role="search">
+        <div class="col-sm-12 col-md-12 pull-right column">
+            <form class="navbar-formx" style="width: 100%;clear: both;"  ng-controller="mainCtrl" ng-submit="processRequest()" name="search_form" role="search">
                 <div class="input-group">
                     <input type="text" placeholder="Tx Hash, Address, or Block #" name="requestType" required  ng-model="ethRequest"  class="form-control searchi">
                     <div class="input-group-btn">
-                        <button class="btn btn-primary btn-blue" type="submit"><i class="fa fa-search"></i></button>
+                        <button class="btn btn-primary btn-blue" type="submit"><i class="fa fa-search">Explore</i></button>
                     </div>
                 </div>
             </form>
