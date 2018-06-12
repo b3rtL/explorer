@@ -5,14 +5,14 @@
     <div id="block" class="blockdiv">
         <div style="padding-bottom:30px;width:100%;text-align:right;clear:both">
           <button class="btn btn-primary">{{conf}}</button>
-          <button class="btn btn-success cb"><span>{{gasUsed}} Gas Used</span></button>
+          <button class="btn btn-success cb"><span>{{gasUsed}} Fuel Used</span></button>
           <a class="btn btn-primary btn-sm" ng-class="{disabled:firstBlock}" href="./#/block/{{blockNumber-1}}">&lt; Prev</a>
           <a class="btn btn-primary btn-sm" ng-class="{disabled: lastBlock}" href="./#/block/{{blockNumber+1}}">Next &gt;</a>
         </div>
         <h2 style="margin-top: 30px;">
           <i class="fa fa-cube"></i> Summary
         </h2>
-        <table class="table table-striped">
+        <table class="table table-striped table-hover">
             <tbody>
             <tr>
                 <td>Block Number</td>
@@ -60,7 +60,7 @@
                 <td>{{gasLimit}}</td>
             </tr>
             <tr>
-                <td>Gas Used</td>
+                <td>Fuel Used</td>
                 <td>{{gasUsed}}</td>
             </tr>
             <tr>
@@ -104,7 +104,7 @@
     </h2>
 
     <div ng-repeat="tx in transactions">
-      <table class="table">
+      <table class="table table-striped table-hover">
           <tbody>
           <tr>
               <th colspan="2" style="text-align:left">Transaction #{{$index+1}}</th>
@@ -121,18 +121,22 @@
               <td>To</td>
               <td><a href="./#/address/{{tx.to}}">{{tx.to}}</a></td>
           </tr>
-          <tr>
+          <!-- <tr>
              <td>Contract Address</td>
              <td><a href="./#/address/{{tx.contractAddress}}">{{tx.contractAddress}}</a></td>
-         </tr>
+         </tr> -->
           <tr>
               <td>Gas</td>
               <td>{{tx.gas}}</td>
           </tr>
           <tr>
+              <td>Fee</td>
+              <td>{{tx.fee}}</td>
+          </tr>
+          <!-- <tr>
               <td>Input</td>
               <td><textarea style="min-width: 100%; background-color: #222; color: #08d410;">{{tx.input}}</textarea></td>
-          </tr>
+          </tr> -->
           <tr>
               <td>Value</td>
               <td>{{tx.value}} AQUA</td>

@@ -1,15 +1,15 @@
 <div class="container" style="padding-top: 20px;">
-  <div class="row">
+  <div class="row" align="center">
     <div class="col-md-2" align="center"><div class="boxi">Current Block:<br />{{ blockNumber }}</div></div>
     <div class="col-md-2" align="center"><div class="boxi">Gas Limit:<br />{{ gasLimit }}</div></div>
     <div class="col-md-2" align="center"><div class="boxi">Block Time:<br />{{ blocktime }} second(s)</div></div>
-    <div class="col-md-2" align="center"><div class="boxi">Current Diff:<br />{{ difficulty }}</div></div>
+    <div class="col-md-2" align="center"><div class="boxi">Current Diff:<br />{{ difficulty_formatted }}</div></div>
 <!--    <div class="col-md-2" align="center"><div class="boxi">Hashrate:<br />{{ hashrate || "Loading" | hashFormat }}</div></div> -->
   </div>
-  <h1><i class="fa fa-cubes"></i> <a href="https://github.com/aquanetwork/aquachain/pull/19">Argonated</a> at block 22800 <small></small></h1><br />
-  <h3><i class="fa fa-cubes"></i><small><a href="https://github.com/aquanetwork/aquachain/pull/19">GPUs and ASICs destroyed!</a>!</small></h3><br />
+  <h1><i class="fa fa-cubes"></i> <a href="https://github.com/aquanetwork/aquachain/pull/19">Argonated</a> at block 22800</h1><br />
+  <h3><i></i><small><a href="https://github.com/aquanetwork/aquachain/pull/19">GPUs and ASICs destroyed!</a></small></h3><br />
   <div class="table-responsive">
-    <table class="table table-hover table-bordered">
+    <table class="table table-hover table-bordered" style="background-color: #293640">
         <thead class="thead-inverse">
             <td>
                 <strong>Block #</strong>
@@ -27,7 +27,7 @@
                 # of TXs
             </td>
             <td>
-                Gas used
+                Fuel Used
             </td>
         </thead>
         <tbody>
@@ -37,9 +37,9 @@
                         <span class="btn btn-sm btn-primary"><i class="fa fa-cube"></i> {{ block.number }}</span>
                     </a>
                 </td>
-                <td><a href="/explorer/#/block/{{ block.hash }}"><span class="btn btn-sm btn-success">{{ block.hash | truncate : 12 }}</span></a></td>
-                <td style="vertical-align:middle;">{{ block.difficulty }}</td>
-                <td style="vertical-align:middle;"><a href="/explorer/#/address/{{ block.miner }}">{{ block.miner }}</a></td>
+                <td><a href="/explorer/#/block/{{ block.hash }}" style="font-family:monospace;"><span class="btn btn-sm btn-success">{{ block.hash }}</span></a></td>
+                <td style="vertical-align:middle;">{{ difficulty_formatted }}</td>
+                <td style="vertical-align:middle;"><a href="/explorer/#/address/{{ block.miner }}">{{ block.miner | truncate : 12 }}</a></td>
                 <td style="vertical-align:middle;">
                     {{ block.size | sizeFormat }}
                 </td>
@@ -58,7 +58,7 @@
   </div>
     <h1><i class="fa fa-exchange"></i> Recent Transactions</h1><br />
     <div class="table-responsive">
-    <table class="table table-hover table-bordered">
+    <table class="table table-hover table-bordered" style="background-color: #293640">
         <thead class="thead-inverse">
             <td>
                 <strong>TX Hash</strong>
@@ -68,7 +68,7 @@
             <td>To
             </td>
             <td>
-                Gas Used
+                Fuel Used
             </td>
             <td>
                 Value
@@ -77,14 +77,22 @@
         <tbody>
             <tr ng-repeat="tx in recenttransactions track by $index-async" class="animated fadeIn">
 
-              <td style="vertical-align:middle;"><a href="/explorer/#/tx/{{ tx.hash }}">{{ tx.hash || "" | truncate : 45 }}</a></td>
+              <td><a href="/explorer/#/block/{{ block.hash }}" style="font-family:monospace;"><span class="btn btn-sm btn-success">{{ tx.hash }}</span></a></td>
+              <td>
+                  <a href="/explorer/#/block/{{ block.number }}">
+                      <span class="btn btn-sm btn-primary"><i class="fa fa-cube"></i> {{ tx.blockNumber }}</span>
+                  </a>
+              </td>
                 <td style="vertical-align:middle;">
-                    <a href="/explorer/#/block/{{ tx.blockNumber }}">
-                        {{ tx.blockNumber || "" }}
-                    </a>
+                  <a href="/explorer/#/address/{{ tx.from }}">
+                    {{ tx.from || "" | truncate : 20 }}
+                  </a>
                 </td>
-                <td style="vertical-align:middle;"><a href="/explorer/#/address/{{ tx.from }}">{{ tx.from || "" | truncate : 20 }}</a></td>
-                <td style="vertical-align:middle;"><a href="/explorer/#/address/{{ tx.to }}">{{ tx.to || "" | truncate : 20 }}</a></td>
+                <td style="vertical-align:middle;">
+                  <a href="/explorer/#/address/{{ tx.to }}">
+                    {{ tx.to || "" | truncate : 20 }}
+                  </a>
+                </td>
                 <td style="vertical-align:middle;">
                     {{ tx.gas | gasFormat }}
                 </td>

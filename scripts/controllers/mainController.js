@@ -179,7 +179,13 @@ angular.module('ethExplorer')
             $scope.txNumber = currentTXnumber;
             $scope.recenttransactions = [];
             for (var i=0; i < 10 && currentTXnumber - i >= 0; i++) {
-              $scope.recenttransactions.push(web3.eth.getTransactionFromBlock(currentTXnumber - i));
+              txa = web3.eth.getTransactionFromBlock(currentTXnumber - i)
+              if (txa == null) {
+                continue
+              }
+
+              $scope.recenttransactions.push(txa);
+
             }
         }
 
