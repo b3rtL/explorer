@@ -4,7 +4,7 @@
 <!--[if IE 8]>         <html lang="en" ng-app="ethExplorer" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="ethExplorer" class="no-js"> <!--<![endif]-->
 <head>
-  <base href="https://aquachain.github.io/explorer/">
+  <base href="/explorer/">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Aquachain Block Explorer</title>
@@ -13,20 +13,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css">
-<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
-<!--  <script src="https://use.fontawesome.com/9376283190.js"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <!-- <script src="https://use.fontawesome.com/9376283190.js"></script> -->
   <script src="bower_components/web3/dist/web3.js"></script>
 </head>
-<body style="background-color: #3D7B80;">
+<body style="background: #899499; /* Old browsers */ background: -moz-radial-gradient(center, ellipse cover, #899499 0%, #596a72 100%); /* FF3.6-15 */ background: -webkit-radial-gradient(center, ellipse cover, #899499 0%,#596a72 100%); /* Chrome10-25,Safari5.1-6 */ background: radial-gradient(ellipse at center, #899499 0%,#596a72 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#899499', endColorstr='#596a72',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */">
 <nav class="navbar navbar-dark navbar-static-top" role="navigation">
-  <div class="container">
+  <div>
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
             <i class="fa fa-bars"></i>
         </button>
-        <img src='https://aquachain.github.io/img/a100.png' alt='AQUACHAIN EXPLORER'>
-        <!-- <a class="navbar-brand" href="./#/">AQUACHAIN EXPLORER</a> -->
+        <!-- <img src='https://aquachain.github.io/img/a100.png' alt='AQUACHAIN EXPLORER'> -->
+        <a class="navbar-brand" href="./#/">AQUACHAIN EXPLORER</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav">
@@ -37,22 +37,21 @@
             <li><a href="https://aquachain.github.io/">Website</a></li>
             <li><a href="https://github.com/aquanetwork/aquachain/wiki/Basics">Wiki</a></li>
             <li><a href="https://github.com/aquanetwork/aquachain">Source Code</a></li>
-            <li><a href="https://t.me/AquaCrypto">Chat</a></li>
-        </ul>
-        <div class="col-sm-12 col-md-12 pull-right column">
-            <form class="navbar-formx" style="width: 100%;clear: both;"  ng-controller="mainCtrl" ng-submit="processRequest()" name="search_form" role="search">
-                <div class="input-group">
-                    <input type="text" placeholder="Tx Hash, Address, or Block #" name="requestType" required  ng-model="ethRequest"  class="form-control searchi">
-                    <div class="input-group-btn">
-                        <button class="btn btn-primary btn-blue" type="submit"><i class="fa fa-search">Explore</i></button>
-                    </div>
-                </div>
-            </form>
-        </div>
+            <li><a href="https://t.me/AquaCrypto">Community</a></li>
+       </ul>
     </div>
   </div>
 </nav>
-
+<div class="container">
+    <form class="navbar-formx" style="width: 100%;clear: both;"  ng-controller="mainCtrl" ng-submit="processRequest()" name="search_form" role="search">
+        <div class="input-group">
+            <input type="text" placeholder="Tx Hash, Address, or Block #" name="requestType" required  ng-model="ethRequest"  class="form-control searchi">
+            <div class="input-group-btn">
+                <button class="btn btn-primary btn-blue" type="submit"><i class="fa fa-search">Search</i></button>
+            </div>
+        </div>
+    </form>
+</div>
 
   <div ng-view></div>
 
@@ -92,22 +91,13 @@
             </div>
         </div>
     </div>
-
-
 <div class="footer styledfoot">
     <footer><br />
+            Known Pools: <a href='https://pool.aquachain-foundation.org'>pool.aquachain-foundation.org</a> | <a href='https://aqua.signal2noi.se'>aqua.signal2noi.se</a> | <a href='https://pool.aquachain.net'>pool.aquachain.net</a> | <a href='https://comining.io'>comining.io</a><br>
             AQUACHAIN EXPLORER 2018 | <a href="http://github.com/carsenk/explorer">Source</a><br />
             <br />
     </footer>
 </div>
-<pre>
-Known Pools:
-
-pool.aquachain-foundation.org 0x394c1b17faa1198b45fc001264e3e0e4f3585113
-aqua.signal2noi.se            0x0993321a8e9642e641dec2d87de50dacddfb0117
-pool.aquachain.net            0x13ff6eb21cce8c21b2aa6151660949cee7ad608b
-comining.io                   0x11905bd0863ba579023f662d1935e39d0c671933
-</pre>
 
 </body>
 </html>

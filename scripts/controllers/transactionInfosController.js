@@ -34,7 +34,7 @@ angular.module('ethExplorer')
                     $scope.from = result.from;
                     $scope.gas = result.gas;
                     //$scope.gasPrice = result.gasPrice.c[0] + " WEI";
-                    $scope.gasPrice = web3.fromWei(result.gasPrice, "gwei") + " gwei";
+                    $scope.gasPrice = web3.fromWei(result.gasPrice, "gwei") + " GWEI";
                     $scope.hash = result.hash;
                     $scope.input = result.input; // that's a string
                     $scope.dataFromHex = escapeHTML(hex2a(result.input.slice(2)));
@@ -47,13 +47,13 @@ angular.module('ethExplorer')
 		    if($scope.blockNumber!==undefined){
                         $scope.conf = number - $scope.blockNumber;
                         if($scope.conf===0){
-				$scope.conf='Wait. Block has Zero';	
+				$scope.conf='Wait. Block has Zero';
 		//          $scope.conf='unconfirmed'; //TODO change color button when unconfirmed... ng-if or ng-class
                         }
                     }
 	            if($scope.blockHash==0x0000000000000000000000000000000000000000000000000000000000000000){
-				$scope.conf='Pending Transaction - Zero';	
-			}       
+				$scope.conf='Pending Transaction - Zero';
+			}
 		    //TODO Refactor this logic, asynchron calls + services....
                     if($scope.blockNumber!==undefined){
                         var info = web3.eth.getBlock($scope.blockNumber);

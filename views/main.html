@@ -1,15 +1,3 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12" align="center">
-    <form class="navbar-form"  ng-controller="mainCtrl" ng-submit="processRequest()" name="search_form" role="search">
-        <div class="input-group">
-            <input type="text" placeholder="Tx Hash, Address, or Block #" name="requestType" required ng-model="ethRequest"  class="form-control searchimain">
-            <div class="input-group-btn">
-                <button class="btn btn-primary btn-bluem" type="submit"><i class="fa fa-search"></i> Search</button>
-            </div>
-        </div>
-    </form></div></div>
-</div>
 <div class="container" style="padding-top: 20px;">
   <div class="row">
     <div class="col-md-2" align="center"><div class="boxi">Current Block:<br />{{ blockNumber }}</div></div>
@@ -21,7 +9,7 @@
   <h1><i class="fa fa-cubes"></i> <a href="https://github.com/aquanetwork/aquachain/pull/19">Argonated</a> at block 22800 <small></small></h1><br />
   <h3><i class="fa fa-cubes"></i><small><a href="https://github.com/aquanetwork/aquachain/pull/19">GPUs and ASICs destroyed!</a>!</small></h3><br />
   <div class="table-responsive">
-    <table class="table table-striped table-hover table-bordered">
+    <table class="table table-hover table-bordered">
         <thead class="thead-inverse">
             <td>
                 <strong>Block #</strong>
@@ -43,7 +31,7 @@
             </td>
         </thead>
         <tbody>
-            <tr ng-repeat="block in blocks" class="animated fadeIn">
+            <tr ng-repeat ="block in blocks" class="animated fadeIn">
                 <td>
                     <a href="/explorer/#/block/{{ block.number }}">
                         <span class="btn btn-sm btn-primary"><i class="fa fa-cube"></i> {{ block.number }}</span>
@@ -68,9 +56,9 @@
         </tbody>
     </table>
   </div>
-    <h1><i class="fa fa-exchange"></i> Recent Transactions <small>Transactions in the Aquachain Network</small></h1><br />
+    <h1><i class="fa fa-exchange"></i> Recent Transactions</h1><br />
     <div class="table-responsive">
-    <table class="table table-striped table-hover table-bordered">
+    <table class="table table-hover table-bordered">
         <thead class="thead-inverse">
             <td>
                 <strong>TX Hash</strong>
