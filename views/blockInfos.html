@@ -1,4 +1,4 @@
-<div class="container" style="padding-top: 10px;">
+<div class="container animated fadeIn" style="padding-top: 10px;">
 
     <div class="boxi" style="clear:both;">View information about Aquachain <i class="fa fa-cube"></i> Block {{number}}</div>
 
@@ -103,7 +103,7 @@
       <i class="fa fa-exchange"></i> Transactions
     </h2>
 
-    <div ng-repeat="tx in transactions">
+    <div ng-repeat="tx in transactions" class="animated fadeIn">
       <table class="table table-striped table-hover">
           <tbody>
           <tr>
@@ -111,7 +111,7 @@
           </tr>
           <tr>
               <td>Hash #</td>
-              <td><a href="./#/tx/{{tx.hash}}">{{tx.hash}}</a></td>
+              <td><a href="./#/tx/{{tx.hash}}"><span class="btn btn-sm btn-success">{{ tx.hash }}</span></a></td>
           </tr>
           <tr>
               <td>From</td>

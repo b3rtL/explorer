@@ -1,13 +1,13 @@
-<div class="container" style="padding-top: 20px;">
+<div class="container animated fadeIn" style="padding-top: 20px;">
   <div class="row" align="center">
     <div class="col-md-2" align="center"><div class="boxi">Current Block:<br />{{ blockNumber }}</div></div>
     <div class="col-md-2" align="center"><div class="boxi">Gas Limit:<br />{{ gasLimit }}</div></div>
     <div class="col-md-2" align="center"><div class="boxi">Block Time:<br />{{ blocktime }} second(s)</div></div>
     <div class="col-md-2" align="center"><div class="boxi">Current Diff:<br />{{ difficulty_formatted }}</div></div>
 <!--    <div class="col-md-2" align="center"><div class="boxi">Hashrate:<br />{{ hashrate || "Loading" | hashFormat }}</div></div> -->
-  </div>
-  <h1><i class="fa fa-cubes"></i> <a href="https://github.com/aquanetwork/aquachain/pull/19">Argonated</a> at block 22800</h1><br />
-  <h3><i></i><small><a href="https://github.com/aquanetwork/aquachain/pull/19">GPUs and ASICs destroyed!</a></small></h3><br />
+  </div><br />
+  <h3><a href="https://github.com/aquanetwork/aquachain/pull/19">GPUs and ASICs destroyed!</a></h3>
+  <h2 class="fa fa-cubes">Recent Blocks</h2><br />
   <div class="table-responsive">
     <table class="table table-hover table-bordered" style="background-color: #293640">
         <thead class="thead-inverse">
@@ -31,7 +31,7 @@
             </td>
         </thead>
         <tbody>
-            <tr ng-repeat ="block in blocks" class="animated fadeIn">
+            <tr ng-repeat ="block in blocks">
                 <td>
                     <a href="/explorer/#/block/{{ block.number }}">
                         <span class="btn btn-sm btn-primary"><i class="fa fa-cube"></i> {{ block.number }}</span>
@@ -75,11 +75,11 @@
             </td>
         </thead>
         <tbody>
-            <tr ng-repeat="tx in recenttransactions track by $index-async" class="animated fadeIn">
+            <tr ng-repeat="tx in recenttransactions track by $index-async">
 
-              <td><a href="/explorer/#/block/{{ block.hash }}" style="font-family:monospace;"><span class="btn btn-sm btn-success">{{ tx.hash }}</span></a></td>
+              <td><a href="/explorer/#/tx/{{ tx.hash }}" style="font-family:monospace;"><span class="btn btn-sm btn-success">{{ tx.hash }}</span></a></td>
               <td>
-                  <a href="/explorer/#/block/{{ block.number }}">
+                  <a href="/explorer/#/block/{{ tx.blockNumber }}">
                       <span class="btn btn-sm btn-primary"><i class="fa fa-cube"></i> {{ tx.blockNumber }}</span>
                   </a>
               </td>

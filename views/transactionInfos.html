@@ -1,11 +1,11 @@
-<div class="container" style="padding-top:5px;">
-    <h1><i class="fa fa-exchange"></i> Transaction</h1>
+<div class="container animated fadeIn" style="padding-top:5px;">
+    <h1><i class="fa fa-exchange"></i> Transaction</h1><br>
     <div id="tx-97785883" class="txdiv">
       <div class="table-responsive">
-        <table class="table table-striped" cellpadding="0" cellspacing="0" style="padding:0px;float:left;margin:0px;width:100%">
+        <table class="table table-striped animated fadeIn" cellpadding="0" cellspacing="0" style="padding:0px;float:left;margin:0px;width:100%">
             <tbody>
             <tr>
-                <th colspan="3" align="left"><a class="hash-link" href="./#/tx/{{txId}}">{{txId}}</a> <span class="pull-right"></span></th>
+                <th colspan="3" align="left"><span class="pull-left">{{txId}}</span></th>
             </tr>
             <tr>
                 <td style="text-align:center;vertical-align:middle;">
@@ -31,7 +31,7 @@
             <button class="btn btn-success cb"><span>Ⱥ{{ethValue}}</span></button>
         </div>
         <div class="table-responsive">
-        <table class="table table-striped">
+        <table class="table table-striped ">
             <tbody><tr>
                 <th colspan="2" style="text-align:left">Summary</th>
             </tr>
@@ -48,7 +48,7 @@
             <tr>
                 <td>Included In Block</td>
                 <td>
-                    <a href="./#/block/{{blockNumber}}"><button class="btn btn-sm btn-primary">{{blockNumber}}</button></a>
+                    <a href="./#/block/{{blockNumber}}"><button class="fa fa-cube btn btn-sm btn-primary">{{blockNumber}}</button></a>
                 </td>
             </tr>
             <tr>
@@ -71,25 +71,26 @@
                 <td>Transaction price</td>
 		 <td>{{txprice}}</td>
             </tr>
-<div class="swt" ng-switch on="input">
-	<div class="swt" ng-switch-when="">
-	</div>
-	 <div class="swt" ng-switch-when="0x">
-        </div>
-	<div class="swt" ng-switch-default>
-<tr>
-	<td>Data</td>
-	<td><textarea>{{input}}</textarea></td>
-</tr><tr>
-	<td>Decoded</td>
-	<td>	<pre>{{dataFromHex}}</pre></td></tr>
-	</div>
-</div>
+              <div class="swt" ng-switch on="input">
+                <div class="swt" ng-switch-when=""></div>
+              	<div class="swt" ng-switch-when="0x">
+
+                </div>
+              	<div class="swt" ng-switch-default>
+                  <tr>
+                    <td>Data</td>
+                   	<td><textarea style="min-width: 100%; background-color: #222; color: #08d410;">{{input}}</textarea></td>
+                  </tr>
+                  <tr>
+                    <td>Decoded</td>
+                   	<td>{{dataFromHex}}</td>
+                  </tr>
+                </div>
+              </div>
             </tbody>
         </table>
       </div>
     </div>
-
 </div>
 
 <script>
