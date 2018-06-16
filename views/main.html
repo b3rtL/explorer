@@ -1,13 +1,13 @@
-<div class="container animated fadeIn" style="padding-top: 20px;">
-  <div class="row" align="center">
+<div class="container animated fadeIn" style="padding-top: 20px; width: 90vw;">
+  <div class="container">
     <div class="col-md-2" align="center"><div class="boxi">Current Block:<br />{{ blockNumber }}</div></div>
     <div class="col-md-2" align="center"><div class="boxi">Gas Limit:<br />{{ gasLimit }}</div></div>
     <div class="col-md-2" align="center"><div class="boxi">Block Time:<br />{{ blocktime }} second(s)</div></div>
     <div class="col-md-2" align="center"><div class="boxi">Current Diff:<br />{{ difficulty_formatted }}</div></div>
-<!--    <div class="col-md-2" align="center"><div class="boxi">Hashrate:<br />{{ hashrate || "Loading" | hashFormat }}</div></div> -->
+    <!-- <div class="col-md-2" align="center"><div class="boxi">Hashrate:<br />{{ hashrate || "Loading" | hashFormat }}</div></div> -->
   </div><br />
-  <h3><a href="https://github.com/aquanetwork/aquachain/pull/19">GPUs and ASICs destroyed!</a></h3>
-  <h2 class="fa fa-cubes">Recent Blocks</h2><br />
+  <h2><a href="https://github.com/aquanetwork/aquachain/pull/19">GPUs and ASICs destroyed!</a></h2><br />
+  <h3> <i class="fa fa-cubes"></i>Recent Blocks</h3><br />
   <div class="table-responsive">
     <table class="table table-hover table-bordered" style="background-color: #293640">
         <thead class="thead-inverse">
@@ -56,7 +56,7 @@
         </tbody>
     </table>
   </div>
-    <h1><i class="fa fa-exchange"></i> Recent Transactions</h1><br />
+    <h3><i class="fa fa-exchange"></i> Recent Transactions</h3><br />
     <div class="table-responsive">
     <table class="table table-hover table-bordered" style="background-color: #293640">
         <thead class="thead-inverse">

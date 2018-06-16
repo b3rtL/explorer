@@ -1,9 +1,9 @@
-<div class="container animated fadeIn" style="padding-top: 10px;">
+<div class="container animated fadeIn" style="padding-top: 10px; width: 90vw;">
 
     <div class="boxi" style="clear:both;">View information about Aquachain <i class="fa fa-cube"></i> Block {{number}}</div>
 
     <div id="block" class="blockdiv">
-        <div style="padding-bottom:30px;width:100%;text-align:right;clear:both">
+        <div style="padding-bottom:30px;width:100%;text-align:right;clear:both;">
           <button class="btn btn-primary">{{conf}}</button>
           <button class="btn btn-success cb"><span>{{gasUsed}} Fuel Used</span></button>
           <a class="btn btn-primary btn-sm" ng-class="{disabled:firstBlock}" href="./#/block/{{blockNumber-1}}">&lt; Prev</a>
@@ -22,16 +22,13 @@
                 <td>Hash Algorithm</td>
                 <td>{{version}}</td>
             </tr>
-
             <tr>
                 <td>Block Hash</td>
                 <td>{{ hash }}</td>
             </tr>
             <tr>
                 <td>Received Time</td>
-                <td>
-                    {{timestamp}}
-                </td>
+                <td>{{ timestamp }}</td>
             </tr>
             <tr>
               <td>Confirmations</td>
@@ -39,9 +36,7 @@
             </tr>
             <tr>
                 <td>Difficulty</td>
-                <td>
-                    {{difficulty}}
-                </td>
+                <td>{{ difficulty }}</td>
             </tr>
             <tr>
                 <td>Nonce</td>
