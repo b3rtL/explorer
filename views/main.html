@@ -38,7 +38,7 @@
                     </a>
                 </td>
                 <td><a href="/explorer/#/block/{{ block.hash }}" style="font-family:monospace;"><span class="btn btn-sm btn-success">{{ block.hash }}</span></a></td>
-                <td style="vertical-align:middle;">{{ difficulty_formatted }}</td>
+                <td style="vertical-align:middle;">{{ block.difficulty.toFormat(0) }}</td>
                 <td style="vertical-align:middle;"><a href="/explorer/#/address/{{ block.miner }}">{{ block.miner | truncate : 12 }}</a></td>
                 <td style="vertical-align:middle;">
                     {{ block.size | sizeFormat }}
